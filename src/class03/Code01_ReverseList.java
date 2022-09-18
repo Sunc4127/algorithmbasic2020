@@ -3,7 +3,7 @@ package class03;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Code01_ReverseList {
+public class  Code01_ReverseList {
 
 	public static class Node {
 		public int value;
@@ -28,28 +28,30 @@ public class Code01_ReverseList {
 	//   a    ->   b    ->  c  ->  null
 	//   c    ->   b    ->  a  ->  null
 	public static Node reverseLinkedList(Node head) {
-		Node pre = null;
-		Node next = null;
+		Node left = null;
+		Node right = null;
 		while (head != null) {
-			next = head.next;
-			head.next = pre;
-			pre = head;
-			head = next;
+			right = head.next;
+			head.next = left;
+			left = head;
+			head = right;
 		}
-		return pre;
+		return left;
 	}
 
 	public static DoubleNode reverseDoubleList(DoubleNode head) {
-		DoubleNode pre = null;
-		DoubleNode next = null;
+		DoubleNode left = null;
+		DoubleNode right = null;
 		while (head != null) {
-			next = head.next;
-			head.next = pre;
-			head.last = next;
-			pre = head;
-			head = next;
+			right = head.next;
+
+			head.next = left;
+			head.last = right;
+
+			left = head;
+			head = right;
 		}
-		return pre;
+		return left;
 	}
 
 	public static Node testReverseLinkedList(Node head) {

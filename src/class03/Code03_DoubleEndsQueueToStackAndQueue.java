@@ -131,7 +131,7 @@ public class Code03_DoubleEndsQueueToStackAndQueue {
 		if (o1 != null && o2 == null) {
 			return false;
 		}
-		if (o1 == null && o2 == null) {
+		if (o1 == null) {
 			return true;
 		}
 		return o1.equals(o2);

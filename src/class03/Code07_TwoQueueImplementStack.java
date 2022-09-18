@@ -24,9 +24,11 @@ public class Code07_TwoQueueImplementStack {
 				help.offer(queue.poll());
 			}
 			T ans = queue.poll();
+
 			Queue<T> tmp = queue;
 			queue = help;
 			help = tmp;
+
 			return ans;
 		}
 
@@ -35,10 +37,14 @@ public class Code07_TwoQueueImplementStack {
 				help.offer(queue.poll());
 			}
 			T ans = queue.poll();
+
+			// 把 ans 再装回去
 			help.offer(ans);
+
 			Queue<T> tmp = queue;
 			queue = help;
 			help = tmp;
+
 			return ans;
 		}
 

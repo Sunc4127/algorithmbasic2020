@@ -56,15 +56,22 @@ public class Code01_MergeSort {
 			// 当前左组的，第一个位置
 			int L = 0;
 			while (L < N) {
+				// 防止溢出
 				if (mergeSize >= N - L) {
 					break;
 				}
+
+				// 当前左组的，最后一个位置
 				int M = L + mergeSize - 1;
+
+				//  当前右组的，最后一个位置，防止溢出
 				int R = M + Math.min(mergeSize, N - M - 1);
+
+				// L .. M   M + 1 .. R
 				merge(arr, L, M, R);
 				L = R + 1;
 			}
-			// 防止溢出
+			// 防止 int 下一次 2 倍 指数增长的时候 溢出
 			if (mergeSize > N / 2) {
 				break;
 			}
